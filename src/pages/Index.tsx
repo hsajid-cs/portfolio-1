@@ -1,6 +1,7 @@
+
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users } from 'lucide-react';
+import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users, Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -35,106 +36,154 @@ const Index = () => {
 
   const projects = [
     {
+      title: "Pact AI",
+      description: "Mobile app featuring personalized AI companions to boost productivity and emotional wellness. AI bots maintain memory, send check-ins, and interact contextually to build consistency.",
+      tech: ["Flutter", "Claude API", "Firebase"],
+      category: "Mobile App",
+      gradient: "from-purple-200 to-pink-200"
+    },
+    {
       title: "Hand Maestro",
-      description: "Real-time gesture-controlled media player using hand tracking for intuitive playback control",
+      description: "Gesture-controlled media player for real-time interaction using accurate hand tracking and dynamic control mechanisms",
       tech: ["Python", "OpenCV", "MediaPipe"],
       category: "AI/ML",
       gradient: "from-pink-200 to-purple-200"
     },
     {
-      title: "BlockedAI",
-      description: "Chrome extension that blocks distracting websites using AI-based logic and smart scheduling",
-      tech: ["JavaScript", "Chrome Extension APIs"],
-      category: "Web Extension",
-      gradient: "from-purple-200 to-pink-200"
-    },
-    {
       title: "AgriTech Lens",
-      description: "AI-powered system for soil classification and crop health detection with farmer-friendly explanations",
-      tech: ["Python", "TensorFlow", "OpenCV", "OpenAI API"],
+      description: "AI-based solution to classify soil types and assess crop health. Integrated OpenAI API to deliver actionable farming insights and enhance agricultural productivity",
+      tech: ["Python", "TensorFlow", "MediaPipe", "OpenCV", "OpenAI API"],
       category: "AI/ML",
       gradient: "from-pink-100 to-purple-100"
     },
     {
-      title: "Satiate",
-      description: "Food donation platform for NGOs with inventory tracking and volunteer management",
-      tech: ["HTML", "CSS", "JavaScript", "Firebase"],
-      category: "Web App",
+      title: "HeartbeatAI",
+      description: "ML pipeline to predict heart rate from PPG signals. Preprocessed raw data, removed noise, and trained regression models for health monitoring",
+      tech: ["Python", "Scikit-learn", "TensorFlow"],
+      category: "AI/ML",
       gradient: "from-purple-100 to-pink-100"
     },
     {
       title: "MoodWave",
-      description: "Voice emotion detection model using audio signal processing and machine learning",
-      tech: ["Python", "Librosa", "scikit-learn", "TensorFlow"],
+      description: "Voice emotion recognition system using the CREMA-D dataset. Extracted MFCC features and trained models for accurate mood detection",
+      tech: ["Python", "Librosa", "Scikit-learn", "TensorFlow"],
       category: "AI/ML",
       gradient: "from-pink-200 to-purple-200"
     },
     {
-      title: "Pact AI",
-      description: "Wellness chatbot app with emotionally intelligent AI companions and memory persistence",
-      tech: ["Flutter", "Claude AI", "Firebase", "Provider"],
-      category: "Mobile App",
+      title: "BlockedAI",
+      description: "Browser extension that uses AI to block distracting websites based on behavior patterns and user-defined triggers",
+      tech: ["JavaScript", "Chrome Extension APIs"],
+      category: "Web Extension",
       gradient: "from-purple-200 to-pink-200"
     }
   ];
 
   const skills = [
-    { name: "Python", level: 90, icon: Code },
+    { name: "Python", level: 95, icon: Code },
     { name: "JavaScript", level: 85, icon: Code },
-    { name: "React", level: 80, icon: Code },
-    { name: "Firebase", level: 85, icon: Database },
-    { name: "TensorFlow", level: 75, icon: Code },
-    { name: "Flutter", level: 70, icon: Code }
+    { name: "Machine Learning", level: 90, icon: Code },
+    { name: "TensorFlow", level: 85, icon: Database },
+    { name: "OpenCV", level: 80, icon: Code },
+    { name: "Flutter", level: 75, icon: Code }
   ];
 
   const certifications = [
     {
-      title: "AWS Cloud Practitioner",
-      issuer: "Amazon Web Services",
-      date: "2024",
-      description: "Cloud computing fundamentals and AWS services",
-      badge: "bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700"
+      title: "Deep Learning Specialization",
+      issuer: "Coursera",
+      date: "Ongoing",
+      description: "Advanced deep learning techniques and neural networks",
+      badge: "bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
     },
     {
-      title: "Google Analytics Certified",
-      issuer: "Google",
-      date: "2023",
-      description: "Web analytics and data-driven insights",
+      title: "Advanced Learning Algorithms",
+      issuer: "Coursera",
+      date: "Dec 2024",
+      description: "Advanced machine learning algorithms and techniques",
       badge: "bg-gradient-to-r from-green-100 to-blue-100 text-green-700"
     },
     {
-      title: "Machine Learning Specialization",
+      title: "Supervised Machine Learning",
       issuer: "Coursera",
-      date: "2023",
-      description: "Deep learning and neural networks",
-      badge: "bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
+      date: "Jul 2024",
+      description: "Comprehensive supervised learning methods and applications",
+      badge: "bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700"
     }
   ];
 
   const volunteerWork = [
     {
-      role: "Tech Mentor",
-      organization: "Girls Who Code",
-      period: "2023 - Present",
-      description: "Mentoring young girls in programming and encouraging them to pursue careers in tech",
-      impact: "Mentored 15+ students",
+      role: "Usher",
+      organization: "SGA SEECS",
+      period: "May 2024 & May 2025",
+      description: "Helped with judges ushering for project evaluation and academic events",
+      impact: "Smooth event coordination",
       gradient: "from-pink-100 to-purple-100"
     },
     {
-      role: "Event Organizer",
-      organization: "Tech Community Meetups",
-      period: "2022 - Present",
-      description: "Organizing monthly tech meetups and workshops for the local developer community",
-      impact: "200+ attendees per event",
+      role: "Registration Volunteer",
+      organization: "SGA SEECS",
+      period: "Dec 2023 & Oct 2024",
+      description: "Helped with ushering and registration of volunteers for alumni homecoming and convocation",
+      impact: "Successful event management",
       gradient: "from-purple-100 to-pink-100"
     },
     {
-      role: "Food Drive Coordinator",
-      organization: "Local NGO",
-      period: "2021 - 2022",
-      description: "Coordinated food donation drives and inventory management for underprivileged families",
-      impact: "1000+ families helped",
+      role: "Volunteer",
+      organization: "Alkhidmat Foundation",
+      period: "Nov 2024",
+      description: "Helped with ushering for the foundation-laying ceremony of their girls school",
+      impact: "Community education support",
       gradient: "from-pink-200 to-purple-200"
+    },
+    {
+      role: "Decor Executive",
+      organization: "Nust Cultural Fest",
+      period: "Feb 2025",
+      description: "Collaborated in event planning and decoration for the university's cultural festival",
+      impact: "Enhanced campus culture",
+      gradient: "from-purple-200 to-pink-200"
+    },
+    {
+      role: "Decor Executive",
+      organization: "NEC",
+      period: "Apr 2024",
+      description: "Collaborated in event planning for their Eco carnival for Earth day 2024",
+      impact: "Environmental awareness",
+      gradient: "from-pink-100 to-purple-100"
+    },
+    {
+      role: "Decor Executive",
+      organization: "NCSC",
+      period: "Sep 2024 - May 2025",
+      description: "Collaborated in event planning and execution for campus-wide donation drives and awareness programs",
+      impact: "Community engagement",
+      gradient: "from-purple-100 to-pink-100"
+    },
+    {
+      role: "Volunteer",
+      organization: "Shaukat Khanum Hospital",
+      period: "Mar 2025",
+      description: "Engaged in campaign planning and outreach for fundraising initiatives",
+      impact: "Raised PKR 100,000+ in zakat donations",
+      gradient: "from-pink-200 to-purple-200"
+    },
+    {
+      role: "Iftar Drive Volunteer",
+      organization: "Rizq",
+      period: "Mar 2024",
+      description: "Helped set up venue for multiple iftars in Ramadan 2024",
+      impact: "Community service during Ramadan",
+      gradient: "from-purple-200 to-pink-200"
+    },
+    {
+      role: "Web Content Writer",
+      organization: "Rizq",
+      period: "Aug 2020 - Feb 2021",
+      description: "Contributed to research and writing for food insecurity campaigns",
+      impact: "Helped raise PKR 50,000 for ration drives",
+      gradient: "from-pink-100 to-purple-100"
     }
   ];
 
@@ -189,18 +238,18 @@ const Index = () => {
             </h1>
             
             <p className="text-xl md:text-2xl text-gray-600 mb-6 max-w-3xl mx-auto">
-              A passionate <span className="text-purple-600 font-semibold">Full Stack Developer</span> from Pakistan 🇵🇰 
-              who loves creating magical experiences with code and DIY projects!
+              AI and Data Science enthusiast from Pakistan 🇵🇰 with strong foundations in Python, machine learning, 
+              and signal/audio processing. Passionate about solving impactful problems with data-driven solutions!
             </p>
             
             <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Badge variant="secondary" className="bg-pink-100 text-pink-700 px-4 py-2 text-lg">
                 <Heart className="w-4 h-4 mr-2" />
-                Tech Enthusiast
+                AI/ML Enthusiast
               </Badge>
               <Badge variant="secondary" className="bg-purple-100 text-purple-700 px-4 py-2 text-lg">
                 <Sparkles className="w-4 h-4 mr-2" />
-                DIY Lover
+                NUST CS Student
               </Badge>
               <Badge variant="secondary" className="bg-pink-100 text-pink-700 px-4 py-2 text-lg">
                 <Code className="w-4 h-4 mr-2" />
@@ -266,19 +315,19 @@ const Index = () => {
               <Card className="bg-card-gradient border-0 shadow-xl">
                 <CardContent className="p-8">
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    Hey there! I'm a Computer Science student at NUST with a passion for creating 
-                    innovative solutions that make a difference. I absolutely love the process of 
-                    turning ideas into reality through code! ✨
+                    Hey there! I'm a Computer Science student at NUST with a passion for AI and Data Science. 
+                    I absolutely love building real-time AI applications for emotion recognition, health monitoring, 
+                    and agricultural intelligence! ✨
                   </p>
                   <p className="text-lg text-gray-700 leading-relaxed mb-6">
-                    When I'm not coding, you'll find me DIYing home decor, organizing events 
-                    (I give off major HR energy! 😄), or exploring the latest tech trends. 
-                    I believe in bringing creativity and enthusiasm to everything I do.
+                    I'm a quick learner, team collaborator, and deeply interested in solving impactful problems 
+                    with data-driven solutions. When I'm not coding, you'll find me volunteering for various 
+                    causes and organizing events (I give off major organizer energy! 😄).
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <Badge className="bg-pink-100 text-pink-700">📍 Islamabad, Pakistan</Badge>
-                    <Badge className="bg-purple-100 text-purple-700">🎓 NUST Computer Science</Badge>
-                    <Badge className="bg-pink-100 text-pink-700">💼 Full Stack Developer</Badge>
+                    <Badge className="bg-purple-100 text-purple-700">🎓 NUST CS (CGPA: 3.73/4.00)</Badge>
+                    <Badge className="bg-pink-100 text-pink-700">🎯 Expected Graduation: June 2026</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -295,10 +344,10 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">🚀 What I Love</h3>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• Building AI/ML solutions that solve real problems</li>
-                    <li>• Creating beautiful, user-friendly interfaces</li>
-                    <li>• DIY projects and home decoration</li>
-                    <li>• Organizing events and bringing people together</li>
+                    <li>• Building AI/ML solutions for real-world problems</li>
+                    <li>• Signal and audio processing applications</li>
+                    <li>• Health monitoring and agricultural intelligence</li>
+                    <li>• Community service and event organization</li>
                   </ul>
                 </CardContent>
               </Card>
@@ -307,8 +356,9 @@ const Index = () => {
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold text-gray-800 mb-3">💡 My Approach</h3>
                   <p className="text-gray-600">
-                    I believe in combining technical excellence with creativity and empathy. 
-                    Every project is an opportunity to learn something new and make a positive impact!
+                    I believe in combining technical excellence with analytical thinking and research. 
+                    Every project is an opportunity to learn something new and make a positive impact 
+                    through data-driven solutions!
                   </p>
                 </CardContent>
               </Card>
@@ -328,12 +378,12 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              My <span className="text-pink-600 font-dancing">Projects</span>
+              My <span className="text-pink-600 font-dancing">AI/ML Projects</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Here are some of my favorite projects that showcase my passion for creating 
-              innovative solutions! 💖
+              Here are some of my favorite AI and machine learning projects that showcase my passion for 
+              creating innovative, data-driven solutions! 💖
             </p>
           </motion.div>
 
@@ -390,9 +440,12 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              My <span className="text-pink-600 font-dancing">Skills</span>
+              My <span className="text-pink-600 font-dancing">Technical Skills</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Core technical skills I've developed through projects and coursework
+            </p>
           </motion.div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -423,6 +476,43 @@ const Index = () => {
               </motion.div>
             ))}
           </div>
+
+          {/* Additional Skills */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="mt-16 text-center"
+          >
+            <Card className="bg-card-gradient border-0 shadow-lg max-w-4xl mx-auto">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">Additional Technical Skills</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="text-lg font-medium text-pink-600 mb-3">Languages & Tools</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["Python", "JavaScript", "SQL", "C/C++", "Java", "Git", "VS Code", "Google Colab", "Figma", "Tableau"].map((skill) => (
+                        <Badge key={skill} variant="outline" className="border-pink-200 text-pink-700">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-medium text-purple-600 mb-3">AI/ML Libraries</h4>
+                    <div className="flex flex-wrap gap-2">
+                      {["Scikit-learn", "TensorFlow", "NumPy", "Pandas", "OpenCV", "Librosa", "MediaPipe"].map((skill) => (
+                        <Badge key={skill} variant="outline" className="border-purple-200 text-purple-700">
+                          {skill}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </motion.div>
         </div>
       </section>
 
@@ -441,7 +531,7 @@ const Index = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Continuous learning is my passion! Here are some certifications I've earned 📚✨
+              Continuous learning is my passion! Here are my machine learning certifications 📚✨
             </p>
           </motion.div>
 
@@ -504,7 +594,7 @@ const Index = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {volunteerWork.map((work, index) => (
               <motion.div
-                key={work.role}
+                key={`${work.role}-${work.organization}`}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
@@ -555,22 +645,48 @@ const Index = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-              I'm always excited to collaborate on new projects or just chat about tech! 
+              I'm always excited to collaborate on AI/ML projects or just chat about tech! 
               Feel free to reach out 💕
             </p>
             
-            <div className="space-y-4 mb-8">
-              <p className="text-lg text-gray-700">
-                📧 <a href="mailto:hirasajid.dev@gmail.com" className="text-pink-600 hover:underline">
-                  hirasajid.dev@gmail.com
-                </a>
-              </p>
-              <p className="text-lg text-gray-700">
-                💼 <a href="https://linkedin.com/in/hira-sajid-rs" className="text-pink-600 hover:underline">
-                  linkedin.com/in/hira-sajid-rs
-                </a>
-              </p>
-              <p className="text-lg text-gray-700">📱 +92-331-7904358</p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8 max-w-4xl mx-auto">
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <Mail className="w-8 h-8 text-pink-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Email</h3>
+                  <a href="mailto:hirasajid.dev@gmail.com" className="text-pink-600 hover:underline text-sm">
+                    hirasajid.dev@gmail.com
+                  </a>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <Phone className="w-8 h-8 text-pink-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-800 mb-2">Phone</h3>
+                  <p className="text-gray-600 text-sm">+92-331-7963538</p>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <Linkedin className="w-8 h-8 text-pink-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-800 mb-2">LinkedIn</h3>
+                  <a href="https://linkedin.com/in/hsajid-cs" className="text-pink-600 hover:underline text-sm">
+                    hsajid-cs
+                  </a>
+                </CardContent>
+              </Card>
+              
+              <Card className="bg-white border-0 shadow-lg hover:shadow-xl transition-shadow">
+                <CardContent className="p-6 text-center">
+                  <Github className="w-8 h-8 text-pink-500 mx-auto mb-3" />
+                  <h3 className="font-semibold text-gray-800 mb-2">GitHub</h3>
+                  <a href="https://github.com/hsajid-cs" className="text-pink-600 hover:underline text-sm">
+                    hsajid-cs
+                  </a>
+                </CardContent>
+              </Card>
             </div>
             
             <Button 
