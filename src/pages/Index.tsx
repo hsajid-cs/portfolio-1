@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users, Github, Linkedin, Mail, Phone, MapPin, Brain, Cpu, Zap, Binary, CircuitBoard, Atom, Star, Hexagon, Triangle, Circle } from 'lucide-react';
+import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users, Github, Linkedin, Mail, Phone, MapPin, Brain, Cpu, Zap, Binary, CircuitBoard, Atom, Star, Hexagon, Triangle, Circle, Palette, BarChart3, GitBranch, Terminal } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -557,25 +557,83 @@ const Index = () => {
             <Card className="bg-card-gradient border-0 shadow-lg max-w-4xl mx-auto">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">Additional Technical Skills</h3>
-                <div className="grid md:grid-cols-2 gap-6">
+                <div className="grid md:grid-cols-2 gap-8">
                   <div>
-                    <h4 className="text-lg font-medium text-pink-600 mb-3">Languages & Tools</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {["Python", "JavaScript", "SQL", "C/C++", "Java", "Git", "VS Code", "Google Colab", "Figma", "Tableau"].map((skill) => (
-                        <Badge key={skill} variant="outline" className="border-pink-200 text-pink-700">
-                          {skill}
-                        </Badge>
-                      ))}
+                    <h4 className="text-lg font-medium text-pink-600 mb-4">Languages & Tools</h4>
+                    <div className="flex flex-wrap gap-3">
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        Python
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        JavaScript
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Database className="w-4 h-4" />
+                        SQL
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        C/C++
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        Java
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <GitBranch className="w-4 h-4" />
+                        Git
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Terminal className="w-4 h-4" />
+                        VS Code
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        Google Colab
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Palette className="w-4 h-4" />
+                        Figma
+                      </Badge>
+                      <Badge variant="outline" className="border-pink-200 text-pink-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <BarChart3 className="w-4 h-4" />
+                        Tableau
+                      </Badge>
                     </div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-medium text-purple-600 mb-3">AI/ML Libraries</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {["Scikit-learn", "TensorFlow", "NumPy", "Pandas", "OpenCV", "Librosa", "MediaPipe"].map((skill) => (
-                        <Badge key={skill} variant="outline" className="border-purple-200 text-purple-700">
-                          {skill}
-                        </Badge>
-                      ))}
+                    <h4 className="text-lg font-medium text-purple-600 mb-4">AI/ML Libraries</h4>
+                    <div className="flex flex-wrap gap-3">
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Brain className="w-4 h-4" />
+                        Scikit-learn
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Cpu className="w-4 h-4" />
+                        TensorFlow
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Database className="w-4 h-4" />
+                        NumPy
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Database className="w-4 h-4" />
+                        Pandas
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Code className="w-4 h-4" />
+                        OpenCV
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Zap className="w-4 h-4" />
+                        Librosa
+                      </Badge>
+                      <Badge variant="outline" className="border-purple-200 text-purple-700 px-3 py-2 text-sm flex items-center gap-2">
+                        <Brain className="w-4 h-4" />
+                        MediaPipe
+                      </Badge>
                     </div>
                   </div>
                 </div>
