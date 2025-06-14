@@ -55,87 +55,59 @@ const Index = () => {
 
   const projects = [
     {
-      title: "Pact AI",
-      description: "Mobile app featuring personalized AI companions to boost productivity and emotional wellness. AI bots maintain memory, send check-ins, and interact contextually to build consistency.",
-      tech: ["Flutter", "Claude API", "Firebase"],
-      category: "Mobile App",
-      gradient: "from-purple-200 to-pink-200"
-    },
-    {
       title: "Hand Maestro",
-      description: "Gesture-controlled media player for real-time interaction using accurate hand tracking and dynamic control mechanisms",
+      description: "Developed a real-time gesture-controlled media player. Enabled users to control playback using hand gestures via landmark-based recognition.",
       tech: ["Python", "OpenCV", "MediaPipe"],
       category: "AI/ML",
       gradient: "from-pink-200 to-purple-200"
     },
     {
+      title: "BlockedAI",
+      description: "Created a Chrome extension to block distracting websites using AI-based logic and user-defined blocking schedules. Aimed at enhancing focus and productivity.",
+      tech: ["JavaScript", "Chrome Extension APIs"],
+      category: "Browser Extension",
+      gradient: "from-purple-200 to-pink-200"
+    },
+    {
       title: "AgriTech Lens",
-      description: "AI-based solution to classify soil types and assess crop health. Integrated OpenAI API to deliver actionable farming insights and enhance agricultural productivity",
-      tech: ["Python", "TensorFlow", "MediaPipe", "OpenCV", "OpenAI API"],
+      description: "Built an AI-powered system to classify soil types and detect crop health from images. Integrated OpenAI to generate readable explanations for farmers.",
+      tech: ["Python", "TensorFlow", "OpenCV", "OpenAI API"],
       category: "AI/ML",
       gradient: "from-pink-100 to-purple-100"
     },
     {
-      title: "HeartbeatAI",
-      description: "ML pipeline to predict heart rate from PPG signals. Preprocessed raw data, removed noise, and trained regression models for health monitoring",
-      tech: ["Python", "Scikit-learn", "TensorFlow"],
-      category: "AI/ML",
+      title: "Satiate",
+      description: "Developed a food donation and inventory tracking web app for NGOs. Implemented dynamic inventory updates, volunteer management, and distribution workflows.",
+      tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+      category: "Web App",
       gradient: "from-purple-100 to-pink-100"
     },
     {
       title: "MoodWave",
-      description: "Voice emotion recognition system using the CREMA-D dataset. Extracted MFCC features and trained models for accurate mood detection",
+      description: "Built an AI model that detects emotions in voice recordings using audio signal processing and machine learning classification techniques.",
       tech: ["Python", "Librosa", "Scikit-learn", "TensorFlow"],
       category: "AI/ML",
       gradient: "from-pink-200 to-purple-200"
     },
     {
-      title: "BlockedAI",
-      description: "Browser extension that uses AI to block distracting websites based on behavior patterns and user-defined triggers",
-      tech: ["JavaScript", "Chrome Extension APIs"],
-      category: "Web Extension",
+      title: "Pact AI",
+      description: "Designed a wellness chatbot app where users interact with AI companions exhibiting emotional intelligence. Supported memory persistence and contextual responses.",
+      tech: ["Flutter", "Claude AI", "Firebase", "Provider"],
+      category: "Mobile App",
       gradient: "from-purple-200 to-pink-200"
     },
     {
-      title: "Stock Price Predictor",
-      description: "Machine learning model to predict stock prices using historical data and technical indicators with Flask web interface",
-      tech: ["Python", "Flask", "Scikit-learn", "Pandas"],
-      category: "AI/ML",
+      title: "DigiMess",
+      description: "Developed a mess management system for university students. Enabled role-based login, menu scheduling, attendance tracking, and monthly billing with database integration.",
+      tech: ["Kotlin", "PostgreSQL", "Tkinter"],
+      category: "Desktop App",
       gradient: "from-pink-100 to-purple-100"
     },
     {
-      title: "Expense Tracker",
-      description: "Web application for personal finance management with category-wise expense tracking and budget visualization",
-      tech: ["HTML", "CSS", "JavaScript", "Chart.js"],
-      category: "Web App",
-      gradient: "from-purple-100 to-pink-100"
-    },
-    {
-      title: "Weather Dashboard",
-      description: "Interactive weather application with real-time data, forecasts, and location-based weather information",
-      tech: ["JavaScript", "Weather API", "CSS3", "HTML5"],
-      category: "Web App",
-      gradient: "from-pink-200 to-purple-200"
-    },
-    {
-      title: "Task Management System",
-      description: "Full-featured task management application with team collaboration, deadlines, and progress tracking",
-      tech: ["React", "Node.js", "MongoDB", "Express"],
-      category: "Full Stack",
-      gradient: "from-purple-200 to-pink-200"
-    },
-    {
-      title: "Portfolio Website",
-      description: "Responsive personal portfolio website showcasing projects, skills, and professional experience with modern design",
-      tech: ["React", "Tailwind CSS", "Framer Motion"],
-      category: "Web Development",
-      gradient: "from-pink-100 to-purple-100"
-    },
-    {
-      title: "E-commerce Landing Page",
-      description: "Modern, responsive landing page for e-commerce platform with product showcase and conversion optimization",
-      tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
-      category: "Web Development",
+      title: "Jail Management System",
+      description: "Created a desktop application for managing inmate records, sentence durations, and facility assignments using a simple GUI and CSV data handling.",
+      tech: ["Python", "Pandas", "Tkinter"],
+      category: "Desktop App",
       gradient: "from-purple-100 to-pink-100"
     }
   ];
