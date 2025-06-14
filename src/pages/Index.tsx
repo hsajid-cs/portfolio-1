@@ -95,6 +95,48 @@ const Index = () => {
       tech: ["JavaScript", "Chrome Extension APIs"],
       category: "Web Extension",
       gradient: "from-purple-200 to-pink-200"
+    },
+    {
+      title: "Stock Price Predictor",
+      description: "Machine learning model to predict stock prices using historical data and technical indicators with Flask web interface",
+      tech: ["Python", "Flask", "Scikit-learn", "Pandas"],
+      category: "AI/ML",
+      gradient: "from-pink-100 to-purple-100"
+    },
+    {
+      title: "Expense Tracker",
+      description: "Web application for personal finance management with category-wise expense tracking and budget visualization",
+      tech: ["HTML", "CSS", "JavaScript", "Chart.js"],
+      category: "Web App",
+      gradient: "from-purple-100 to-pink-100"
+    },
+    {
+      title: "Weather Dashboard",
+      description: "Interactive weather application with real-time data, forecasts, and location-based weather information",
+      tech: ["JavaScript", "Weather API", "CSS3", "HTML5"],
+      category: "Web App",
+      gradient: "from-pink-200 to-purple-200"
+    },
+    {
+      title: "Task Management System",
+      description: "Full-featured task management application with team collaboration, deadlines, and progress tracking",
+      tech: ["React", "Node.js", "MongoDB", "Express"],
+      category: "Full Stack",
+      gradient: "from-purple-200 to-pink-200"
+    },
+    {
+      title: "Portfolio Website",
+      description: "Responsive personal portfolio website showcasing projects, skills, and professional experience with modern design",
+      tech: ["React", "Tailwind CSS", "Framer Motion"],
+      category: "Web Development",
+      gradient: "from-pink-100 to-purple-100"
+    },
+    {
+      title: "E-commerce Landing Page",
+      description: "Modern, responsive landing page for e-commerce platform with product showcase and conversion optimization",
+      tech: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
+      category: "Web Development",
+      gradient: "from-purple-100 to-pink-100"
     }
   ];
 
@@ -447,12 +489,11 @@ const Index = () => {
             className="text-center mb-16"
           >
             <h2 className="text-4xl font-bold text-gray-800 mb-4">
-              My <span className="text-pink-600 font-dancing">AI/ML Projects</span>
+              My <span className="text-pink-600 font-dancing">Projects</span>
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Here are some of my favorite AI and machine learning projects that showcase my passion for 
-              creating innovative, data-driven solutions! 💖
+              Here's a collection of my projects spanning AI/ML, web development, and mobile applications! 💖
             </p>
           </motion.div>
 
