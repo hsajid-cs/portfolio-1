@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp } from 'lucide-react';
+import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -87,6 +87,57 @@ const Index = () => {
     { name: "Flutter", level: 70, icon: Code }
   ];
 
+  const certifications = [
+    {
+      title: "AWS Cloud Practitioner",
+      issuer: "Amazon Web Services",
+      date: "2024",
+      description: "Cloud computing fundamentals and AWS services",
+      badge: "bg-gradient-to-r from-orange-100 to-yellow-100 text-orange-700"
+    },
+    {
+      title: "Google Analytics Certified",
+      issuer: "Google",
+      date: "2023",
+      description: "Web analytics and data-driven insights",
+      badge: "bg-gradient-to-r from-green-100 to-blue-100 text-green-700"
+    },
+    {
+      title: "Machine Learning Specialization",
+      issuer: "Coursera",
+      date: "2023",
+      description: "Deep learning and neural networks",
+      badge: "bg-gradient-to-r from-purple-100 to-pink-100 text-purple-700"
+    }
+  ];
+
+  const volunteerWork = [
+    {
+      role: "Tech Mentor",
+      organization: "Girls Who Code",
+      period: "2023 - Present",
+      description: "Mentoring young girls in programming and encouraging them to pursue careers in tech",
+      impact: "Mentored 15+ students",
+      gradient: "from-pink-100 to-purple-100"
+    },
+    {
+      role: "Event Organizer",
+      organization: "Tech Community Meetups",
+      period: "2022 - Present",
+      description: "Organizing monthly tech meetups and workshops for the local developer community",
+      impact: "200+ attendees per event",
+      gradient: "from-purple-100 to-pink-100"
+    },
+    {
+      role: "Food Drive Coordinator",
+      organization: "Local NGO",
+      period: "2021 - 2022",
+      description: "Coordinated food donation drives and inventory management for underprivileged families",
+      impact: "1000+ families helped",
+      gradient: "from-pink-200 to-purple-200"
+    }
+  ];
+
   return (
     <div className="min-h-screen bg-girly-gradient font-poppins">
       {/* Header */}
@@ -107,6 +158,8 @@ const Index = () => {
               <a href="#about" className="text-gray-700 hover:text-pink-600 transition-colors">About</a>
               <a href="#projects" className="text-gray-700 hover:text-pink-600 transition-colors">Projects</a>
               <a href="#skills" className="text-gray-700 hover:text-pink-600 transition-colors">Skills</a>
+              <a href="#certifications" className="text-gray-700 hover:text-pink-600 transition-colors">Certifications</a>
+              <a href="#volunteer" className="text-gray-700 hover:text-pink-600 transition-colors">Volunteer Work</a>
               <a href="#contact" className="text-gray-700 hover:text-pink-600 transition-colors">Contact</a>
             </div>
           </div>
@@ -365,6 +418,121 @@ const Index = () => {
                       ></motion.div>
                     </div>
                     <p className="text-sm text-gray-600">{skill.level}% Proficiency</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Certifications Section */}
+      <section id="certifications" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              My <span className="text-pink-600 font-dancing">Certifications</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Continuous learning is my passion! Here are some certifications I've earned 📚✨
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {certifications.map((cert, index) => (
+              <motion.div
+                key={cert.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group"
+              >
+                <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-300">
+                  <CardHeader className="pb-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <Award className="text-pink-500 w-8 h-8 mb-2" />
+                      <Badge className="text-xs">{cert.date}</Badge>
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-pink-600 transition-colors">
+                      {cert.title}
+                    </CardTitle>
+                    <CardDescription className="text-purple-600 font-medium">
+                      {cert.issuer}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 mb-4">{cert.description}</p>
+                    <Badge className={cert.badge}>
+                      Certified ✨
+                    </Badge>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Volunteer Work Section */}
+      <section id="volunteer" className="py-20 bg-white">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
+              Volunteer <span className="text-pink-600 font-dancing">Work</span>
+            </h2>
+            <div className="w-24 h-1 bg-gradient-to-r from-pink-500 to-purple-500 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Giving back to the community is close to my heart! Here's how I contribute 💖
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {volunteerWork.map((work, index) => (
+              <motion.div
+                key={work.role}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -10 }}
+                className="group"
+              >
+                <Card className="h-full bg-card-gradient border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                  <div className={`h-3 bg-gradient-to-r ${work.gradient}`}></div>
+                  <CardHeader className="pb-4">
+                    <div className="flex justify-between items-start mb-2">
+                      <Users className="text-pink-500 w-8 h-8 mb-2" />
+                      <Badge variant="secondary" className="bg-pink-100 text-pink-700 text-xs">
+                        {work.period}
+                      </Badge>
+                    </div>
+                    <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-pink-600 transition-colors">
+                      {work.role}
+                    </CardTitle>
+                    <CardDescription className="text-purple-600 font-medium text-base">
+                      {work.organization}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <p className="text-gray-600 mb-4 leading-relaxed">{work.description}</p>
+                    <Badge className="bg-gradient-to-r from-pink-100 to-purple-100 text-pink-700 border-0">
+                      💫 {work.impact}
+                    </Badge>
                   </CardContent>
                 </Card>
               </motion.div>
