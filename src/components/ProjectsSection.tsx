@@ -1,10 +1,16 @@
 
 import { motion } from 'framer-motion';
+import { ExternalLink } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { projects } from '@/data/projects';
 
 export const ProjectsSection = () => {
+  const handleProjectClick = (title: string) => {
+    // Dummy URL - you can replace this with actual project links later
+    window.open(`https://example.com/project/${title.replace(/\s+/g, '-').toLowerCase()}`, '_blank');
+  };
+
   return (
     <section id="projects" className="py-20 bg-gradient-to-br from-pink-50/70 to-purple-50/70 backdrop-blur-sm relative z-10">
       <div className="container mx-auto px-6">
@@ -33,18 +39,22 @@ export const ProjectsSection = () => {
               transition={{ duration: 0.8, delay: index * 0.1 }}
               viewport={{ once: true }}
               whileHover={{ y: -10 }}
-              className="group"
+              className="group cursor-pointer"
+              onClick={() => handleProjectClick(project.title)}
             >
-              <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden">
+              <Card className="h-full bg-white border-0 shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden group-hover:ring-2 group-hover:ring-pink-300">
                 <div className={`h-3 bg-gradient-to-r ${project.gradient}`}></div>
                 <CardHeader className="pb-4">
                   <div className="flex justify-between items-start mb-2">
                     <CardTitle className="text-xl font-semibold text-gray-800 group-hover:text-pink-600 transition-colors">
                       {project.title}
                     </CardTitle>
-                    <Badge variant="secondary" className="bg-pink-100 text-pink-700 text-xs">
-                      {project.category}
-                    </Badge>
+                    <div className="flex items-center gap-2">
+                      <Badge variant="secondary" className="bg-pink-100 text-pink-700 text-xs">
+                        {project.category}
+                      </Badge>
+                      <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-pink-500 transition-colors" />
+                    </div>
                   </div>
                   <CardDescription className="text-gray-600 text-base leading-relaxed">
                     {project.description}
