@@ -1,14 +1,27 @@
-
 import { motion } from 'framer-motion';
 import { ChevronDown, Heart, Sparkles, Code } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { useTypingEffect } from '@/hooks/useTypingEffect';
 
 interface HeroSectionProps {
   onContactClick: () => void;
 }
 
 export const HeroSection = ({ onContactClick }: HeroSectionProps) => {
+  const typedText = useTypingEffect({
+    words: [
+      'AI/ML Enthusiast',
+      'Problem Solver',
+      'Data Science Student',
+      'Python Developer',
+      'Signal Processing Expert'
+    ],
+    typingSpeed: 100,
+    deletingSpeed: 50,
+    pauseDuration: 2000,
+  });
+
   return (
     <section className="min-h-screen flex items-center justify-center relative pt-20 z-10 px-4 sm:px-6">
       <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 via-purple-50/50 to-indigo-50/50"></div>
@@ -31,8 +44,15 @@ export const HeroSection = ({ onContactClick }: HeroSectionProps) => {
             Hi, I'm <span className="text-pink-600 font-dancing">Hira</span>
           </h1>
           
+          <div className="h-12 sm:h-16 flex items-center justify-center">
+            <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-pink-600">
+              {typedText}
+              <span className="animate-pulse text-purple-500">|</span>
+            </p>
+          </div>
+          
           <p className="text-base sm:text-xl md:text-2xl text-gray-600 mb-4 sm:mb-6 max-w-3xl mx-auto px-4">
-            AI and Data Science enthusiast from Pakistan 🇵🇰 with strong foundations in Python, machine learning, 
+            From Pakistan 🇵🇰 with strong foundations in Python, machine learning, 
             and signal/audio processing. Passionate about solving impactful problems with data-driven solutions!
           </p>
           
