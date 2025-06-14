@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Heart, Sparkles, Code, Database, Html, Css, Javascript, ArrowUp } from 'lucide-react';
+import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
