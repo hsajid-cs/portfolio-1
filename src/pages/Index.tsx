@@ -1,7 +1,6 @@
-
 import { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users, Github, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import { ChevronDown, Heart, Sparkles, Code, Database, ArrowUp, Award, Users, Github, Linkedin, Mail, Phone, MapPin, Brain, Cpu, Zap, Binary, CircuitBoard, Atom, Star, Hexagon, Triangle, Circle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -33,6 +32,26 @@ const Index = () => {
       description: "Feel free to reach out at hirasajid.dev@gmail.com",
     });
   };
+
+  // Floating background elements
+  const FloatingElement = ({ children, className, delay = 0, duration = 20 }) => (
+    <motion.div
+      className={`absolute opacity-20 ${className}`}
+      animate={{
+        y: [-20, -100, -20],
+        x: [-10, 10, -10],
+        rotate: [0, 180, 360],
+      }}
+      transition={{
+        duration,
+        repeat: Infinity,
+        delay,
+        ease: "linear"
+      }}
+    >
+      {children}
+    </motion.div>
+  );
 
   const projects = [
     {
@@ -82,7 +101,7 @@ const Index = () => {
   const skills = [
     { name: "Python", level: 95, icon: Code },
     { name: "JavaScript", level: 85, icon: Code },
-    { name: "Machine Learning", level: 90, icon: Code },
+    { name: "Machine Learning", level: 90, icon: Brain },
     { name: "TensorFlow", level: 85, icon: Database },
     { name: "OpenCV", level: 80, icon: Code },
     { name: "Flutter", level: 75, icon: Code }
@@ -188,7 +207,57 @@ const Index = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-girly-gradient font-poppins">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-indigo-50 font-poppins relative overflow-hidden">
+      {/* Floating Background Elements */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <FloatingElement className="top-10 left-10 text-pink-300" delay={0} duration={25}>
+          <Brain size={40} />
+        </FloatingElement>
+        <FloatingElement className="top-32 right-20 text-purple-300" delay={2} duration={30}>
+          <Cpu size={35} />
+        </FloatingElement>
+        <FloatingElement className="top-64 left-1/4 text-pink-200" delay={4} duration={28}>
+          <CircuitBoard size={45} />
+        </FloatingElement>
+        <FloatingElement className="top-20 right-1/3 text-purple-200" delay={6} duration={22}>
+          <Zap size={30} />
+        </FloatingElement>
+        <FloatingElement className="top-80 right-10 text-pink-300" delay={8} duration={26}>
+          <Binary size={38} />
+        </FloatingElement>
+        <FloatingElement className="top-96 left-20 text-purple-300" delay={10} duration={24}>
+          <Atom size={42} />
+        </FloatingElement>
+        
+        {/* Geometric shapes */}
+        <FloatingElement className="top-40 left-1/2 text-pink-200" delay={12} duration={20}>
+          <Star size={25} />
+        </FloatingElement>
+        <FloatingElement className="top-72 right-1/4 text-purple-200" delay={14} duration={32}>
+          <Hexagon size={35} />
+        </FloatingElement>
+        <FloatingElement className="top-16 left-2/3 text-pink-300" delay={16} duration={27}>
+          <Triangle size={30} />
+        </FloatingElement>
+        <FloatingElement className="top-52 left-10 text-purple-300" delay={18} duration={29}>
+          <Circle size={28} />
+        </FloatingElement>
+        
+        {/* Sparkles scattered around */}
+        <FloatingElement className="top-24 left-3/4 text-pink-200" delay={20} duration={18}>
+          <Sparkles size={20} />
+        </FloatingElement>
+        <FloatingElement className="top-88 right-1/3 text-purple-200" delay={22} duration={31}>
+          <Sparkles size={22} />
+        </FloatingElement>
+        <FloatingElement className="top-36 right-16 text-pink-300" delay={24} duration={23}>
+          <Sparkles size={18} />
+        </FloatingElement>
+        <FloatingElement className="top-60 left-1/3 text-purple-300" delay={26} duration={25}>
+          <Sparkles size={24} />
+        </FloatingElement>
+      </div>
+
       {/* Header */}
       <motion.header 
         style={{ y: headerY, opacity: headerOpacity }}
@@ -216,9 +285,9 @@ const Index = () => {
       </motion.header>
 
       {/* Hero Section */}
-      <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-50 via-purple-50 to-pink-100 opacity-50"></div>
-        <div className="container mx-auto px-6 text-center relative z-10">
+      <section className="min-h-screen flex items-center justify-center relative pt-20 z-10">
+        <div className="absolute inset-0 bg-gradient-to-br from-pink-50/50 via-purple-50/50 to-indigo-50/50"></div>
+        <div className="container mx-auto px-6 text-center relative z-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -283,14 +352,14 @@ const Index = () => {
         <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
+          className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         >
           <ChevronDown className="text-pink-500 w-8 h-8" />
         </motion.div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -368,7 +437,7 @@ const Index = () => {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+      <section id="projects" className="py-20 bg-gradient-to-br from-pink-50/70 to-purple-50/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -430,7 +499,7 @@ const Index = () => {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 bg-white">
+      <section id="skills" className="py-20 bg-white/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -517,7 +586,7 @@ const Index = () => {
       </section>
 
       {/* Certifications Section */}
-      <section id="certifications" className="py-20 bg-gradient-to-br from-purple-50 to-pink-50">
+      <section id="certifications" className="py-20 bg-gradient-to-br from-purple-50/70 to-pink-50/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -573,7 +642,7 @@ const Index = () => {
       </section>
 
       {/* Volunteer Work Section */}
-      <section id="volunteer" className="py-20 bg-white">
+      <section id="volunteer" className="py-20 bg-white/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -632,7 +701,7 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-gradient-to-br from-pink-100 to-purple-100">
+      <section id="contact" className="py-20 bg-gradient-to-br from-pink-100/70 to-purple-100/70 backdrop-blur-sm relative z-10">
         <div className="container mx-auto px-6 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -700,7 +769,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-8">
+      <footer className="bg-gray-800/90 backdrop-blur-sm text-white py-8 relative z-10">
         <div className="container mx-auto px-6 text-center">
           <p className="text-lg mb-2">
             Made with <Heart className="inline w-5 h-5 text-pink-500" /> by Hira Sajid
